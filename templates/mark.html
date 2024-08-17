@@ -1,0 +1,26 @@
+<form  method="post">{% csrf_token %}
+    <label for="studentname"> StudentName:</label>
+    <input type="text" name="studentname" id="n1" placeholder="Enter the studentname"><br>
+    <label for="pinno">Pin.No:</label>
+    <input type="text" name="pinno" id="n1" placeholder="Enter the Pinno"><br>
+    <label for="marks"> Marks:</label>
+    <input type="number" name="marks" id="n1" placeholder="Enter the marks"><br>
+    <button type="submit">search</button>
+    
+</form>
+<hr>
+<table border="2px">
+    <tr>
+        <td><h3>Name of the student</h3></td>
+        <td><h3>Pin.No</h3></td>
+        <td><h3>Marks</h3></td>
+    </tr>
+    {% for i in b %}
+    <tr>
+        <td> {{ i.studentname }}</td>
+        <td>{{ i.pinno }}</td>
+        <td> {{ i.marks }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
